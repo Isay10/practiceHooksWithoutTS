@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 export const TaskCreator = (props) => {
   const [newTaskName, setnewTaskName] = useState("");
+   
 
   const updateNewTaskValue = (e) => {
     setnewTaskName(e.target.value);
   };
 
   const createNewTask = ()=>{
-      console.log(newTaskName);
+      props.callback(newTaskName);
       setnewTaskName("");
   }
   return (
